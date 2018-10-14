@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "covermi2",
-    "description": "A very interesting project.",
-    "slug": "covermi2",
+    "name": "CoverMi",
+    "description": "Privately and intelligently share your location with friends",
+    "slug": "covermi",
     "privacy": "public",
     "sdkVersion": "30.0.0",
     "platforms": ["ios", "android"],
