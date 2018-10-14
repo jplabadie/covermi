@@ -1,7 +1,9 @@
 import React from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { Platform, StatusBar, StyleSheet, View, Alert } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
+import GetLocation from './components/GetLocation';
+import MapView from 'react-native-maps';
 
 export default class App extends React.Component {
   state = {
@@ -20,7 +22,8 @@ export default class App extends React.Component {
     } else {
       return (
         <View style={styles.container}>
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+          {Platform.OS === 'android' && <StatusBar barStyle="default" />}        
+          
           <AppNavigator />
         </View>
       );
@@ -57,6 +60,6 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#111',
   },
 });
