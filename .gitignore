@@ -55,6 +55,8 @@ package-lock.json
 node_modules/**/*
 .expo/**/*
 
+# Firebase 
+/firebase/firebase-conf.js
 
 # OS X
 .DS_Store
