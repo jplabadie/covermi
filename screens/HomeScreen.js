@@ -12,10 +12,16 @@ import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 import MapView from 'react-native-maps';
+import MapComponent from '../components/MapComponent';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
+  };
+
+  state = {
+    userLocation: null,
+    usersPlaces: []
   };
 
   render() {
@@ -24,14 +30,10 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         
-            <MapView style={styles.mapStyle}
-        initialRegion={{
-          latitude: 37.78825,
-          longitude: -122.4324,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-      />
+           <MapComponent
+              userLocation = {this.state.userLocation}
+              usersPlaces = {this.state.usersPlaces}
+           />
             
         </ScrollView>
 
@@ -86,12 +88,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   mapStyle:{
-    flex:1,
-    width:350,
-    height:500,
-    backgroundColor:'black',
-    paddingHorizontal: 5,
-    alignItems:'center'},
+    width: "100%",
+    height: "100%"},
   developmentModeText: {
     marginBottom: 20,
     color: 'rgba(0,0,0,0.4)',

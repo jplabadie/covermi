@@ -2,7 +2,7 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import MapView from "react-native-maps";
 
-const MapComponent = props => {
+const mapComponent = props => {
   let userLocationMarker = null;
 
   if (props.userLocation) {
@@ -15,8 +15,8 @@ const MapComponent = props => {
     <View style={styles.mapContainer}>
       <MapView
         initialRegion={{
-          latitude: 37.78825,
-          longitude: -122.4324,
+          latitude: 32.78825,
+          longitude: -98.4324,
           latitudeDelta: 0.0622,
           longitudeDelta: 0.0421
         }}
@@ -33,7 +33,7 @@ const MapComponent = props => {
 const styles = StyleSheet.create({
   mapContainer: {
     width: "100%",
-    height: 200,
+    height: 600,
     marginTop: 20
   },
   map: {
@@ -42,4 +42,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default MapComponent;
+export default mapComponent;
